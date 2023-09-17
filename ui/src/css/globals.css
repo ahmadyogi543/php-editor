@@ -1,0 +1,31 @@
+@font-face {
+  font-family: JetBrainsMonoNL;
+  src: url('/fonts/JetBrainsMonoNL-Regular.ttf');
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.ace_scroll-left {
+  box-shadow: initial !important;
+}
+
+.ace_hidden-cursors {
+  opacity: 0;
+}
+
+pre {
+  margin: 0 !important;
+  font-family: JetBrainsMonoNL !important;
+}
+
+code {
+  font-family: JetBrainsMonoNL !important;
+}
