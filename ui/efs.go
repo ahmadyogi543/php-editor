@@ -1,6 +1,6 @@
-package dist
+package ui
 
 import "embed"
 
-//go:embed "*"
+//go:embed all:dist/*
 var Files embed.FS
