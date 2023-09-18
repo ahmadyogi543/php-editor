@@ -1,17 +1,11 @@
-build: dist-build
-	@go build -o ./bin/web ./cmd/web
+build:
+	@go build -o ./bin/php-editor ./cmd/web
 
-clean: dist-clean
+build-win:
+	@GOOS=windows GOARCH=amd64 go build -o ./bin/php-editor.exe ./cmd/web
+
+clean:
 	@rm -rf bin/
 
 run: build
-	@./bin/web
-
-dist-build: dist-clean
-	@cd ui && npm run build && mv dist/* ../dist/ && rmdir dist/
-
-dist-run:
-	@cd ui && npm run dev
-
-dist-clean:
-	@cd dist && rm -rf assets/ fonts/ favicon.ico index.html php-web.wasm
+	@./bin/php-editor
