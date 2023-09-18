@@ -11,7 +11,7 @@ export default function OutputBar() {
   const handleOnClickClearButton = () => php.clear();
 
   return (
-    <Bar icon="output" title="OUTPUT">
+    <Bar className="border-bottom" icon="output" title="OUTPUT">
       <BarButton
         className="border"
         onClick={handleOnClickClearButton}

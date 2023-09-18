@@ -7,7 +7,7 @@ import 'ace-builds/src-noconflict/ext-language_tools';
 import 'ace-builds/src-noconflict/mode-php';
 import 'ace-builds/src-noconflict/theme-chrome';
 
-export default function CodeEditor() {
+export default function Editor() {
   const {code} = usePHPWebContext();
 
   return (

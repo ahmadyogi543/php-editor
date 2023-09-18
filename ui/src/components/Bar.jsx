@@ -1,9 +1,11 @@
 import React from 'react';
 import {BiCode, BiTerminal} from 'react-icons/bi';
 
-export default function Bar({icon = '', children, title = ''}) {
+export default function Bar({className = '', children, icon = '', title = ''}) {
   return (
-    <div className="align-items-center bg-white border-bottom d-flex justify-content-between px-3 py-2">
+    <div
+      className={`align-items-center bg-white d-flex justify-content-between px-3 py-2 ${className}`}
+    >
       <div className="align-items-center d-flex text-primary">
         {getIcon(icon)}
         <span className="d-block fw-semibold" style={{marginTop: '2px'}}>

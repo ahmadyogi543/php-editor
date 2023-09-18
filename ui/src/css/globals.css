@@ -29,3 +29,8 @@ pre {
 code {
   font-family: JetBrainsMonoNL !important;
 }
+
+div:has(> div.tab-pane) {
+  display: flex;
+  flex-grow: 1 !important;
+}

@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Footer from './components/Footer';
 import Page from './components/Page';
 import {PHPWebContextProvider} from './context/PHPWebContext';
 
@@ -12,7 +11,6 @@ export default function App() {
           <Page />
         </PHPWebContextProvider>
       </main>
-      <Footer />
     </>
   );
 }

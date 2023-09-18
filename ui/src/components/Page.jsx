@@ -1,8 +1,8 @@
 import React from 'react';
 import {Col, Row} from 'react-bootstrap';
 
-import CodeEditor from './CodeEditor';
 import EditorBar from './EditorBar';
+import EditorTabs from './EditorTabs';
 import Output from './Output';
 import OutputBar from './OutputBar';
 
@@ -16,9 +16,7 @@ export default function Page() {
     >
       <Col className="d-flex flex-column border-end" md={8}>
         <EditorBar />
-        <div className="flex-grow-1">
-          <CodeEditor />
-        </div>
+        <EditorTabs />
       </Col>
 
       <Col className="d-flex flex-column" md={4}>
