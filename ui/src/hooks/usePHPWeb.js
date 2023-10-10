@@ -1,39 +1,39 @@
-import {useEffect, useRef, useState} from 'react';
-import {PhpWeb} from 'php-wasm/PhpWeb';
+import { useEffect, useState } from "react";
 
 export default function usePHPWeb() {
-  const [output, setOutput] = useState('');
+  const [output, setOutput] = useState("");
   const [loading, setLoading] = useState(true);
-  const instance = useRef();
 
   const execute = (code) => {
     if (!loading) {
-      setOutput('');
-      instance.current.run(code);
-      instance.current.refresh();
+      setOutput("");
+      const options = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-Api-Key": 1,
+        },
+        body: JSON.stringify({
+          code,
+          input: "",
+          language: "php",
+        }),
+      };
+      fetch("http://localhost:5000/api/v1/compiler/execute", options)
+        .then((resp) => resp.json())
+        .then((rest) => {
+          setOutput(rest.output);
+        });
     }
   };
 
-  const clear = () => setOutput('');
+  const clear = () => setOutput("");
 
   useEffect(() => {
-    const php = new PhpWeb();
-
-    const outputListener = (output) => {
-      setOutput((prevOutput) =>
-        [...prevOutput, output.detail.join('')].join('')
-      );
-    };
-    const readyListener = () => {
-      setLoading(() => {
-        instance.current = php;
-        return false;
-      });
-    };
-
-    php.addEventListener('output', outputListener);
-    php.addEventListener('ready', readyListener);
+    fetch("http://localhost:5000/api/v1/ping")
+      .then((resp) => resp.json())
+      .then(() => setLoading(false));
   }, []);
 
-  return {clear, execute, output, loading};
+  return { clear, execute, output, loading };
 }
