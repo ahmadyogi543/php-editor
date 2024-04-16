@@ -1,6 +1,6 @@
 import React, {createContext, useContext, useState} from 'react';
 
-import usePHPWeb from '../hooks/usePHPWeb';
+import usePHPWeb from '../hooks/usePHPWASM';
 
 const PHPWebContext = createContext();
 
