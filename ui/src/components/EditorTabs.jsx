@@ -1,8 +1,7 @@
-import React from 'react';
-import {Tab, Tabs} from 'react-bootstrap';
-import {FiPlus} from 'react-icons/fi';
+import React from "react";
+import { Tab, Tabs } from "react-bootstrap";
 
-import Editor from './Editor';
+import Editor from "./Editor";
 
 export default function EditorTabs() {
   return (
@@ -14,8 +13,8 @@ export default function EditorTabs() {
       >
         <Editor />
       </Tab>
-
-      <Tab disabled eventKey="plus" title={<FiPlus size={18} />}></Tab>
+      {/* TODO: will do it later... */}
+      {/* <Tab disabled eventKey="plus" title={<FiPlus size={18} />}></Tab> */}
     </Tabs>
   );
 }
